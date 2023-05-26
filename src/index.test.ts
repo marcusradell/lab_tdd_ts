@@ -1,5 +1,5 @@
 async function login(email: string) {
-  return { code: "EMPTY_EMAIL" };
+  return { status: "FAILED", code: "EMPTY_EMAIL" };
 }
 
 test("Logging in with empty email fails with validation error code 'EMPTY_EMAIL'", async () => {
@@ -7,5 +7,5 @@ test("Logging in with empty email fails with validation error code 'EMPTY_EMAIL'
 
   const result = await login(email);
 
-  expect(result).toEqual({ code: "EMPTY_EMAIL" });
+  expect(result).toEqual({ status: "FAILED", code: "EMPTY_EMAIL" });
 });
